@@ -37,6 +37,7 @@ export default Route.extend({
 
     let pearlJam = Band.create({ 
       name: 'Pearl Jam',
+      description: 'Pearl Jam is an American rock band.',
       songs: A([yellowLedbetter, daughter]) 
     });
 
@@ -46,5 +47,11 @@ export default Route.extend({
     });
 
     return A([ledZeppelin, pearlJam, fooFighters]);
+  },
+
+  actions: {
+    didTransition() {
+      document.title = 'Bands - Rock & Roll';
+    }
   }
 });
